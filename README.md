@@ -16,9 +16,9 @@ Artifacts are published in a maven repository for all versions
 ```kotlin
 repositories {
     maven {
-        url = uri("https://registry.somethingcatchy.net/repository/maven-releases/")
+        url = uri("https://registry.somethingcatchy.net/repository/maven-public/")
         content {
-            includeGroup("com.ninni.dye_depot")
+            includeGroup("com.possible-triangle")
         }
     }
 }
@@ -30,7 +30,7 @@ repositories {
 
 ```kotlin
 dependencies {
-    modImplementation("com.ninni.dye_depot:dye_depot-fabric:$minecraft_version-$dye_depot_version")
+    modImplementation("com.possible-triangle:dye_depot-$minecraft_version-fabric:$dye_depot_version")
 }
 ```
 
@@ -42,7 +42,7 @@ dependencies {
 
 ```kotlin
 dependencies {
-    implementation("com.ninni.dye_depot:dye_depot-neoforge:$minecraft_version-$dye_depot_version")
+    implementation("com.possible-triangle:dye_depot-$minecraft_version-neoforge:$dye_depot_version")
 }
 ```
 
@@ -53,7 +53,7 @@ dependencies {
 
 ```kotlin
 dependencies {
-    implementation(fg.deobf("com.ninni.dye_depot:dye_depot-forge:$minecraft_version-$dye_depot_version"))
+    implementation(fg.deobf("com.possible-triangle:dye_depot-$minecraft_version-forge:$minecraft_version-$dye_depot_version"))
 }
 ```
 
