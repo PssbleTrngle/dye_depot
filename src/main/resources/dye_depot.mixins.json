@@ -11,6 +11,7 @@
     "DispenseItemBehaviourMixin",
     "ShulkerBoxBlockMixin",
     "VillagerGoalPackagesMixin",
+    "VillagerMakeLoveMixin",
     "client.NearestBedSensorMixin"
   ],
   "client": [
