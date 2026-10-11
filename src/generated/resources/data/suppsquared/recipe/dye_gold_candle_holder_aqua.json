@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "suppsquared"
+    },
+    {
+      "type": "supplementaries:flag",
+      "flag": "flag"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gold_candle_holder",
+  "ingredients": [
+    {
+      "item": "suppsquared:gold_candle_holder_white"
+    },
+    {
+      "item": "dye_depot:aqua_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "suppsquared:gold_candle_holder_aqua"
+  }
+}

@@ -1,12 +1,12 @@
 {
   "neoforge:conditions": [
     {
-      "type": "supplementaries:flag",
-      "flag": "flag"
-    },
-    {
       "type": "neoforge:mod_loaded",
       "modid": "supplementaries"
+    },
+    {
+      "type": "supplementaries:flag",
+      "flag": "flag"
     }
   ],
   "type": "minecraft:crafting_shaped",
@@ -21,8 +21,8 @@
     }
   },
   "pattern": [
-    "NCN",
-    " N "
+    "C",
+    "N"
   ],
   "result": {
     "count": 1,

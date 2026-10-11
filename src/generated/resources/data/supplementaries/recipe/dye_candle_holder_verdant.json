@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "supplementaries"
+    },
+    {
+      "type": "supplementaries:flag",
+      "flag": "flag"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "candle_holder",
+  "ingredients": [
+    {
+      "item": "supplementaries:candle_holder_white"
+    },
+    {
+      "item": "dye_depot:verdant_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "supplementaries:candle_holder_verdant"
+  }
+}
