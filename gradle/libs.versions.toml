@@ -1,10 +1,9 @@
 [versions]
 jei = "19.27.0.340"
-multikulti = "1.21.1-2.0.3-SNAPSHOT"
 
 [libraries]
 jei-common-api = { group = "mezz.jei", name = "jei-1.21.1-common-api", version.ref = "jei" }
 jei-api = { group = "mezz.jei", name = "jei-1.21.1-neoforge-api", version.ref = "jei" }
 jei = { group = "mezz.jei", name = "jei-1.21.1-neoforge", version.ref = "jei" }
 
-multikulti-datagen = { group = "com.possible-triangle", name = "multikulti-datagen-neoforge", version.ref = "multikulti" }
+multikulti-datagen = { group = "com.possible-triangle", name = "multikulti-1.21.1-datagen-neoforge", version = "2.0.5" }
