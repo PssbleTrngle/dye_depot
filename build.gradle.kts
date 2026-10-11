@@ -41,4 +41,6 @@ dependencies {
     modImplementation(libs.multikulti.datagen)
 }
 
+upload.maven.nexus()
+
 enableSpotless()
