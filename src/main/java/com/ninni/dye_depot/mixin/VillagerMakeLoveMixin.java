@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 public class VillagerMakeLoveMixin {
 
     @WrapOperation(
-            method = "lambda$takeVacantBed$1",
+            method = "method_43972",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/core/Holder;is(Lnet/minecraft/resources/ResourceKey;)Z")
     )
     private static boolean isHomePoi(Holder<PoiType> instance, ResourceKey<PoiType> key, Operation<Boolean> original) {
