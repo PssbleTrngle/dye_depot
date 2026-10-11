@@ -4,12 +4,13 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "BannerBlockMixin",
+    "DispenseItemBehaviourMixin",
     "DyeColorMixin",
     "MapBannerMixin",
     "SheepMixin",
     "ShulkerBoxBlockMixin",
-    "DispenseItemBehaviourMixin",
     "VillagerGoalPackagesMixin",
+    "VillagerMakeLoveMixin",
     "client.NearestBedSensorMixin"
   ],
   "client": [
