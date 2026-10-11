@@ -7,6 +7,7 @@
     "MapBannerMixin",
     "SheepMixin",
     "VillagerGoalPackagesMixin",
+    "VillagerMakeLoveMixin",
     "client.NearestBedSensorMixin"
   ],
   "injectors": {
