@@ -18,6 +18,8 @@ import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.mehvahdjukaar.supplementaries.reg.ModRegistry;
+import net.mehvahdjukaar.suppsquared.SuppSquared;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -179,28 +181,38 @@ public class DDRecipes extends FabricRecipeProvider {
         disable(output, ResourceLocation.withDefaultNamespace("red_dye_from_rose_bush"));
 
         // Supplementaries compat
-        ModCompat.supplementariesHolders(itemLookup, "candle_holder").forEach((dye, block) -> {
-            var candle = DDBlocks.CANDLES.getOrThrow(dye);
-            withSupplementariesFlag(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.value()), ModCompat.SUPPLEMENTARIES, "candle_holder")
-                    .pattern("NCN")
-                    .pattern(" N ")
-                    .define('C', candle)
-                    .define('N', Items.IRON_INGOT)
-                    .group("candle_holder")
-                    .unlockedBy("has_candle", has(candle))
-                    .save(output);
+        withSupplementariesFlag(this, ModCompat.SUPPLEMENTARIES, "candle_holder", () -> {
+            var holders = ModCompat.supplementariesHolders(itemLookup, "candle_holder");
+            holders.forEach((dye, block) -> {
+                var candle = DDBlocks.CANDLES.getOrThrow(dye);
+                ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.value())
+                        .pattern("C")
+                        .pattern("N")
+                        .define('C', candle)
+                        .define('N', Items.IRON_INGOT)
+                        .group("candle_holder")
+                        .unlockedBy("has_candle", has(candle))
+                        .save(output);
+            });
+
+            dyeing(output, RecipeCategory.DECORATIONS, holders, ModRegistry.CANDLE_HOLDERS.get(DyeColor.WHITE).get());
         });
 
-        ModCompat.supplementariesSquaredHolders(itemLookup, "gold_candle_holder").forEach((dye, block) -> {
-            var candle = DDBlocks.CANDLES.getOrThrow(dye);
-            withSupplementariesFlag(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.value()), ModCompat.SUPPLEMENTARIES_SQUARED, "candle_holder")
-                    .pattern("C")
-                    .pattern("N")
-                    .define('C', candle)
-                    .define('N', Items.GOLD_INGOT)
-                    .group("gold_candle_holder")
-                    .unlockedBy("has_candle", has(candle))
-                    .save(output);
+        withSupplementariesFlag(this, ModCompat.SUPPLEMENTARIES_SQUARED, "candle_holder", () -> {
+            var holders = ModCompat.supplementariesSquaredHolders(itemLookup, "gold_candle_holder");
+            holders.forEach((dye, block) -> {
+                var candle = DDBlocks.CANDLES.getOrThrow(dye);
+                ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.value())
+                        .pattern("C")
+                        .pattern("N")
+                        .define('C', candle)
+                        .define('N', Items.GOLD_INGOT)
+                        .group("gold_candle_holder")
+                        .unlockedBy("has_candle", has(candle))
+                        .save(output);
+            });
+
+            dyeing(output, RecipeCategory.DECORATIONS, holders, SuppSquared.GOLDEN_CANDLE_HOLDERS.get(DyeColor.WHITE).get());
         });
 
         ModCompat.supplementariesHolders(itemLookup, "flag").forEach((dye, block) -> {
@@ -254,6 +266,12 @@ public class DDRecipes extends FabricRecipeProvider {
     }
 
     private void dyeing(RecipeOutput output, RecipeCategory category, DyedHolders<?, ? extends ItemLike> dyed, TagKey<Item> from) {
+        dyeing(output, category, dyed, Ingredient.of(from), builder -> builder
+                .unlockedBy(getHasName(from), has(from))
+        );
+    }
+
+    private void dyeing(RecipeOutput output, RecipeCategory category, DyedHolders<?, ? extends ItemLike> dyed, ItemLike from) {
         dyeing(output, category, dyed, Ingredient.of(from), builder -> builder
                 .unlockedBy(getHasName(from), has(from))
         );

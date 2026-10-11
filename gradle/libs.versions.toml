@@ -8,4 +8,4 @@ jei = { group = "mezz.jei", name = "jei-1.21.1-fabric", version.ref = "jei" }
 
 porting-lib-models = { group = "io.github.fabricators_of_create.Porting-Lib", name = "models", version.ref = "porting-lib" }
 
-multikulti-datagen = { group = "com.possible-triangle", name = "multikulti-1.21.1-datagen-fabric", version = "2.0.5" }
+multikulti-datagen = { group = "com.possible-triangle", name = "multikulti-1.21.1-datagen-fabric", version = "2.0.6" }

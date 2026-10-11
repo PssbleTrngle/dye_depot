@@ -35,6 +35,10 @@ public class ModCompat {
         return Conditional.with(value, supplementariesFlag(modId, flag));
     }
 
+    public static <T> T withSupplementariesFlag(T value, String modId, String flag, Runnable runnable) {
+        return Conditional.with(value, supplementariesFlag(modId, flag), runnable);
+    }
+
     public static Condition[] supplementariesFlag(String modId, String flag) {
         return new Condition[]{
                 new ModLoaded(modId),

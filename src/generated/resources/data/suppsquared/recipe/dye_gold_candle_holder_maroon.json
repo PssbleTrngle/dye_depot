@@ -1,0 +1,29 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "suppsquared"
+      ]
+    },
+    {
+      "condition": "supplementaries:flag",
+      "flag": "candle_holder"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gold_candle_holder",
+  "ingredients": [
+    {
+      "item": "suppsquared:gold_candle_holder_white"
+    },
+    {
+      "item": "dye_depot:maroon_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "suppsquared:gold_candle_holder_maroon"
+  }
+}
