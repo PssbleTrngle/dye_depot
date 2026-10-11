@@ -1,7 +1,6 @@
 [versions]
 jei = "19.27.0.340"
 porting-lib = "3.1.0-1+1.21.1"
-multikulti = "1.21.1-2.0.3-SNAPSHOT"
 
 [libraries]
 jei-common-api = { group = "mezz.jei", name = "jei-1.21.1-common-api", version.ref = "jei" }
@@ -9,4 +8,4 @@ jei = { group = "mezz.jei", name = "jei-1.21.1-fabric", version.ref = "jei" }
 
 porting-lib-models = { group = "io.github.fabricators_of_create.Porting-Lib", name = "models", version.ref = "porting-lib" }
 
-multikulti-datagen = { group = "com.possible-triangle", name = "multikulti-datagen-fabric", version.ref = "multikulti" }
+multikulti-datagen = { group = "com.possible-triangle", name = "multikulti-1.21.1-datagen-fabric", version = "2.0.5" }

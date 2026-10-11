@@ -5,8 +5,7 @@
   "name": "${mod_name}",
   "description": "${mod_description}",
   "authors": [
-    "Yapetto",
-    "Ninni"
+    "${mod_author}"
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/dye_depot",
