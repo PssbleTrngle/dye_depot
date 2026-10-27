@@ -1,13 +1,14 @@
 # <meta>
 #    <source>@pssbletrngle/github-meta-generator</source>
-#    <version>1.0.124</version>
-#    <timestamp>2026-10-16T13:34:56.210Z</timestamp>
-#    <hash>5189a53a5905d5de</hash>
+#    <version>1.0.127</version>
+#    <timestamp>2026-10-27T16:12:14.497Z</timestamp>
+#    <hash>d89b49bf939a27d4</hash>
 # </meta>
 
 name: Bug Report
 description: File a bug report
 labels: ["bug"]
+assignees: ["PssbleTrngle"]
 
 body:
   - type: textarea

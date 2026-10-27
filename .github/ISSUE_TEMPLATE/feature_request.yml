@@ -1,13 +1,14 @@
 # <meta>
 #    <source>@pssbletrngle/github-meta-generator</source>
-#    <version>1.0.124</version>
-#    <timestamp>2026-10-16T13:34:56.210Z</timestamp>
-#    <hash>505a720600faa4d8</hash>
+#    <version>1.0.127</version>
+#    <timestamp>2026-10-27T16:12:14.497Z</timestamp>
+#    <hash>298571245ff867c6</hash>
 # </meta>
 
 name: Feature Request
 description: Suggest a feature
 labels: ["enhancement"]
+assignees: ["PssbleTrngle"]
 
 body:
   - type: textarea
