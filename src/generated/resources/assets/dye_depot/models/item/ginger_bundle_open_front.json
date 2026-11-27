@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/template_bundle_open_front",
+  "textures": {
+    "layer0": "dye_depot:item/ginger_bundle_open_front"
+  }
+}
