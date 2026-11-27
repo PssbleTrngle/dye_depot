@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_transmute",
+  "category": "misc",
+  "input": "#minecraft:shulker_boxes",
+  "material": "#c:dyes/olive",
+  "result": {
+    "id": "dye_depot:olive_shulker_box"
+  }
+}

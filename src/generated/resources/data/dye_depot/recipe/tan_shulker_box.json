@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_transmute",
+  "category": "misc",
+  "input": "#minecraft:shulker_boxes",
+  "material": "#c:dyes/tan",
+  "result": {
+    "id": "dye_depot:tan_shulker_box"
+  }
+}

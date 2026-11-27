@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_transmute",
+  "category": "misc",
+  "input": "#minecraft:shulker_boxes",
+  "material": "#c:dyes/rose",
+  "result": {
+    "id": "dye_depot:rose_shulker_box"
+  }
+}

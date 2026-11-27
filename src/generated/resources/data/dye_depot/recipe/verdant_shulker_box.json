@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_transmute",
+  "category": "misc",
+  "input": "#minecraft:shulker_boxes",
+  "material": "#c:dyes/verdant",
+  "result": {
+    "id": "dye_depot:verdant_shulker_box"
+  }
+}

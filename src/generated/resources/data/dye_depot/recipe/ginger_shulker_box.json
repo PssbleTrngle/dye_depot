@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_transmute",
+  "category": "misc",
+  "input": "#minecraft:shulker_boxes",
+  "material": "#c:dyes/ginger",
+  "result": {
+    "id": "dye_depot:ginger_shulker_box"
+  }
+}

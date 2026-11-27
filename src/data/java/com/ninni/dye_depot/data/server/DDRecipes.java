@@ -15,11 +15,7 @@ import net.minecraft.advancements.criterion.ItemPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
-import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
@@ -59,6 +55,17 @@ public class DDRecipes extends RecipeProvider {
         dyeing(output, RecipeCategory.DECORATIONS, DDBlocks.BEDS.mergeVanilla(blockLookup), ItemTags.BEDS);
         DDBlocks.BEDS.forEach((dye, block) ->
             bedFromPlanksAndWool(block.value(), DDBlocks.WOOL.getOrThrow(dye))
+        );
+
+        DDBlocks.SHULKER_BOXES.forEach((dye, block) ->
+            TransmuteRecipeBuilder.transmute(
+                    RecipeCategory.DECORATIONS,
+                    Ingredient.of(items.getOrThrow(ItemTags.SHULKER_BOXES)),
+                    Ingredient.of(items.getOrThrow(dye.getTag())),
+                    block.value().asItem()
+            )
+                    .unlockedBy("has_shulker_box", has(ItemTags.SHULKER_BOXES))
+                    .save(output)
         );
 
         DDBlocks.CANDLES.forEach((dye, block) ->

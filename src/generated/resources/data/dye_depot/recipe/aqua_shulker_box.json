@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_transmute",
+  "category": "misc",
+  "input": "#minecraft:shulker_boxes",
+  "material": "#c:dyes/aqua",
+  "result": {
+    "id": "dye_depot:aqua_shulker_box"
+  }
+}

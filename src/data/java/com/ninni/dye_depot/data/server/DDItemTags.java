@@ -40,7 +40,7 @@ public class DDItemTags extends ItemTagsProvider {
 
         tagDyed(DDItems.DYES, "dyes");
 
-        tagDyed(DDBlocks.SHULKER_BOXES, loaderTag("shulker_boxes"));
+        tagDyed(DDBlocks.SHULKER_BOXES, ItemTags.SHULKER_BOXES);
         tagDyed(DDBlocks.BANNERS, ItemTags.BANNERS);
         tagDyed(DDBlocks.CARPETS, ItemTags.WOOL_CARPETS);
         tagDyed(DDBlocks.CANDLES, ItemTags.CANDLES);

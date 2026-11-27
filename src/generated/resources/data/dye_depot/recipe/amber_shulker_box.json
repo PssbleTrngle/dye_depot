@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_transmute",
+  "category": "misc",
+  "input": "#minecraft:shulker_boxes",
+  "material": "#c:dyes/amber",
+  "result": {
+    "id": "dye_depot:amber_shulker_box"
+  }
+}

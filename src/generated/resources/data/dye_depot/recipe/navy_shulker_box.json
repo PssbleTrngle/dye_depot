@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_transmute",
+  "category": "misc",
+  "input": "#minecraft:shulker_boxes",
+  "material": "#c:dyes/navy",
+  "result": {
+    "id": "dye_depot:navy_shulker_box"
+  }
+}

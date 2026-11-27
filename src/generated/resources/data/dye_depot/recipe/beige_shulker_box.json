@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_transmute",
+  "category": "misc",
+  "input": "#minecraft:shulker_boxes",
+  "material": "#c:dyes/beige",
+  "result": {
+    "id": "dye_depot:beige_shulker_box"
+  }
+}
