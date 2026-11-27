@@ -1,5 +1,5 @@
 [versions]
-jei = "29.5.0.28"
+jei = "29.54.0.123"
 
 [libraries]
 jei-common-api = { group = "mezz.jei", name = "jei-26.1.2-common-api", version.ref = "jei" }
