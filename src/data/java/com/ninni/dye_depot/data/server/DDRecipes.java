@@ -176,41 +176,38 @@ public class DDRecipes extends RecipeProvider {
         // Supplementaries compat
         // TODO waiting for supplementaries
         /*
-        ModCompat.supplementariesHolders(itemLookup, "candle_holder").forEach((dye, block) -> {
-            var candle = DDBlocks.CANDLES.getOrThrow(dye);
-            shaped(RecipeCategory.DECORATIONS, block.value())
-                .pattern("NCN")
-                .pattern(" N ")
-                .define('C', candle)
-                .define('N', Items.IRON_INGOT)
-                .group("candle_holder")
-                .unlockedBy("has_candle", has(candle))
-                .save(withConditions(output, ModCompat.supplementariesFlag("candle_holder")));
+        withSupplementariesFlag(this, ModCompat.SUPPLEMENTARIES, "candle_holder", () -> {
+            var holders = ModCompat.supplementariesHolders(itemLookup, "candle_holder");
+            holders.forEach((dye, block) -> {
+                var candle = DDBlocks.CANDLES.getOrThrow(dye);
+                ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.value())
+                        .pattern("C")
+                        .pattern("N")
+                        .define('C', candle)
+                        .define('N', Items.IRON_INGOT)
+                        .group("candle_holder")
+                        .unlockedBy("has_candle", has(candle))
+                        .save(output);
+            });
+
+            dyeing(output, RecipeCategory.DECORATIONS, holders, ModRegistry.CANDLE_HOLDERS.get(DyeColor.WHITE).get());
         });
 
-        ModCompat.supplementariesSquaredHolders(itemLookup, "gold_candle_holder").forEach((dye, block) -> {
-            var candle = DDBlocks.CANDLES.getOrThrow(dye);
-            shaped(RecipeCategory.DECORATIONS, block.value())
-                .pattern("C")
-                .pattern("N")
-                .define('C', candle)
-                .define('N', Items.GOLD_INGOT)
-                .group("gold_candle_holder")
-                .unlockedBy("has_candle", has(candle))
-                .save(withConditions(output, ModCompat.supplementariesFlag("candle_holder")));
-        });
+        withSupplementariesFlag(this, ModCompat.SUPPLEMENTARIES_SQUARED, "candle_holder", () -> {
+            var holders = ModCompat.supplementariesSquaredHolders(itemLookup, "gold_candle_holder");
+            holders.forEach((dye, block) -> {
+                var candle = DDBlocks.CANDLES.getOrThrow(dye);
+                ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, block.value())
+                        .pattern("C")
+                        .pattern("N")
+                        .define('C', candle)
+                        .define('N', Items.GOLD_INGOT)
+                        .group("gold_candle_holder")
+                        .unlockedBy("has_candle", has(candle))
+                        .save(output);
+            });
 
-        ModCompat.supplementariesHolders(itemLookup, "flag").forEach((dye, block) -> {
-            var wool = DDBlocks.WOOL.getOrThrow(dye);
-            shaped(RecipeCategory.DECORATIONS, block.value())
-                .pattern("###")
-                .pattern("###")
-                .pattern("|  ")
-                .define('#', wool)
-                .define('|', Items.STICK)
-                .group("flag")
-                .unlockedBy("has_wool", has(wool))
-                .save(withConditions(output, ModCompat.supplementariesFlag("flag")));
+            dyeing(output, RecipeCategory.DECORATIONS, holders, SuppSquared.GOLDEN_CANDLE_HOLDERS.get(DyeColor.WHITE).get());
         });
          */
     }
