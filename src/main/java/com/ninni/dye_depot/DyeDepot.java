@@ -23,8 +23,6 @@ public class DyeDepot {
     }
 
     public DyeDepot(IEventBus modBus) {
-        DDMigration.addAliases();
-
         DDItems.register(modBus);
         DDBlocks.register(modBus);
         DDBlockEntityType.register(modBus);
