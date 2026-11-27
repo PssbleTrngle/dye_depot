@@ -6,6 +6,7 @@ import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
 import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.util.ARGB;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.state.BlockState;
@@ -20,25 +21,23 @@ public class PoofParticleProvider implements ParticleProvider<BlockParticleOptio
 
     @Override
     @Nullable
-    public Particle createParticle(BlockParticleOption particleOptions, ClientLevel clientLevel, double d, double e, double f, double g, double h, double i, RandomSource random) {
+    public Particle createParticle(BlockParticleOption particleOptions, ClientLevel level, double x, double y, double z, double g, double h, double i, RandomSource random) {
         BlockState blockState = particleOptions.getState();
         if (!(blockState.getBlock() instanceof DyeBasketBlock block)) return null;
-        // TODO 26.1.2 check and migrate down?
-        var j = block.getDyeColor().getFireworkColor();
-        if (blockState.getBlock() instanceof DyeBasketBlock) {
-            DyeColor dyeColor = ((DyeBasketBlock) blockState.getBlock()).getDyeColor();
+        var color = getColor(block);
+        return new PoofParticle(level, x, y, z, ARGB.redFloat(color), ARGB.greenFloat(color), ARGB.blueFloat(color), this.sprite);
+    }
 
-            if (dyeColor == DyeColor.BLUE) j = 0x345eb6;
-            else if (dyeColor == DyeColor.GREEN) j = 0x5b8221;
-            else if (dyeColor == DyeColor.MAGENTA) j = 0xcb69c5;
-            else if (dyeColor == DyeColor.CYAN) j = 0x29a9b0;
-            else if (dyeColor == DyeColor.RED) j = 0xb53c39;
-            else if (dyeColor == DyeColor.ORANGE) j = 0xd7710a;
-            else j = dyeColor.getTextColor();
-        }
-        float k = (float) (j >> 16 & 0xFF) / 255.0f;
-        float l = (float) (j >> 8 & 0xFF) / 255.0f;
-        float m = (float) (j & 0xFF) / 255.0f;
-        return new PoofParticle(clientLevel, d, e, f, k, l, m, this.sprite);
+    private static int getColor(DyeBasketBlock block) {
+        var dye = block.getDyeColor();
+
+        if (dye == DyeColor.BLUE) return 0x345eb6;
+        if (dye == DyeColor.GREEN) return 0x5b8221;
+        if (dye == DyeColor.MAGENTA) return 0xcb69c5;
+        if (dye == DyeColor.CYAN) return 0x29a9b0;
+        if (dye == DyeColor.RED) return 0xb53c39;
+        if (dye == DyeColor.ORANGE) return 0xd7710a;
+
+        return dye.getTextColor();
     }
 }
