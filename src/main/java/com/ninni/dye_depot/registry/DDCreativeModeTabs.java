@@ -20,6 +20,7 @@ public class DDCreativeModeTabs {
 
     interface Entries {
         void addBefore(ItemLike reference, ItemLike... values);
+
         void addAfter(ItemLike reference, ItemLike... values);
     }
 
@@ -112,6 +113,10 @@ public class DDCreativeModeTabs {
             addDyed(entries, DDBlocks.CANDLES, "candle");
 
             addDyed(entries, DDBlocks.BANNERS, "banner");
+        }
+
+        if (tab == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            addDyed(entries, BUNDLES, "bundle");
         }
     }
 

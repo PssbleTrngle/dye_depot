@@ -49,6 +49,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:indigo_bundle",
+      "required": false
+    },
+    {
       "id": "dye_depot:indigo_dye_basket",
       "required": false
     }

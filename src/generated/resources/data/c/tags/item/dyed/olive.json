@@ -49,6 +49,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:olive_bundle",
+      "required": false
+    },
+    {
       "id": "dye_depot:olive_dye_basket",
       "required": false
     }

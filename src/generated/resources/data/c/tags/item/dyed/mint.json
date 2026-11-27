@@ -49,6 +49,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:mint_bundle",
+      "required": false
+    },
+    {
       "id": "dye_depot:mint_dye_basket",
       "required": false
     }

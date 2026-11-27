@@ -1,0 +1,68 @@
+{
+  "values": [
+    {
+      "id": "dye_depot:maroon_bundle",
+      "required": false
+    },
+    {
+      "id": "dye_depot:rose_bundle",
+      "required": false
+    },
+    {
+      "id": "dye_depot:coral_bundle",
+      "required": false
+    },
+    {
+      "id": "dye_depot:indigo_bundle",
+      "required": false
+    },
+    {
+      "id": "dye_depot:navy_bundle",
+      "required": false
+    },
+    {
+      "id": "dye_depot:slate_bundle",
+      "required": false
+    },
+    {
+      "id": "dye_depot:olive_bundle",
+      "required": false
+    },
+    {
+      "id": "dye_depot:amber_bundle",
+      "required": false
+    },
+    {
+      "id": "dye_depot:beige_bundle",
+      "required": false
+    },
+    {
+      "id": "dye_depot:teal_bundle",
+      "required": false
+    },
+    {
+      "id": "dye_depot:mint_bundle",
+      "required": false
+    },
+    {
+      "id": "dye_depot:aqua_bundle",
+      "required": false
+    },
+    {
+      "id": "dye_depot:verdant_bundle",
+      "required": false
+    },
+    {
+      "id": "dye_depot:forest_bundle",
+      "required": false
+    },
+    {
+      "id": "dye_depot:ginger_bundle",
+      "required": false
+    },
+    {
+      "id": "dye_depot:tan_bundle",
+      "required": false
+    }
+  ]
+}

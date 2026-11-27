@@ -49,6 +49,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:amber_bundle",
+      "required": false
+    },
+    {
       "id": "dye_depot:amber_dye_basket",
       "required": false
     }

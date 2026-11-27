@@ -49,6 +49,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:rose_bundle",
+      "required": false
+    },
+    {
       "id": "dye_depot:rose_dye_basket",
       "required": false
     }

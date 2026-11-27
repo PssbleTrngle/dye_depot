@@ -49,6 +49,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:navy_bundle",
+      "required": false
+    },
+    {
       "id": "dye_depot:navy_dye_basket",
       "required": false
     }

@@ -6,11 +6,13 @@ import com.ninni.dye_depot.registry.DDDyes;
 import com.ninni.dye_depot.registry.DDItems;
 import com.ninni.dye_depot.registry.DDTags;
 import com.ninni.dye_depot.registry.DyedHolders;
+
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
+
 import net.minecraft.advancements.criterion.ItemPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -49,72 +51,65 @@ public class DDRecipes extends RecipeProvider {
         var namespace = DyeDepot.MOD_ID + ":";
 
         DDBlocks.BANNERS.forEach((dye, block) ->
-            banner(block.value(), DDBlocks.WOOL.getOrThrow(dye))
+                banner(block.value(), DDBlocks.WOOL.getOrThrow(dye))
         );
 
         dyeing(output, RecipeCategory.DECORATIONS, DDBlocks.BEDS.mergeVanilla(blockLookup), ItemTags.BEDS);
         DDBlocks.BEDS.forEach((dye, block) ->
-            bedFromPlanksAndWool(block.value(), DDBlocks.WOOL.getOrThrow(dye))
+                bedFromPlanksAndWool(block.value(), DDBlocks.WOOL.getOrThrow(dye))
         );
 
-        DDBlocks.SHULKER_BOXES.forEach((dye, block) ->
-            TransmuteRecipeBuilder.transmute(
-                    RecipeCategory.DECORATIONS,
-                    Ingredient.of(items.getOrThrow(ItemTags.SHULKER_BOXES)),
-                    Ingredient.of(items.getOrThrow(dye.getTag())),
-                    block.value().asItem()
-            )
-                    .unlockedBy("has_shulker_box", has(ItemTags.SHULKER_BOXES))
-                    .save(output)
-        );
+        dyeingTransmute(output, RecipeCategory.DECORATIONS, DDBlocks.SHULKER_BOXES, ItemTags.SHULKER_BOXES);
 
         DDBlocks.CANDLES.forEach((dye, block) ->
-            candle(block.value(), dyes.getOrThrow(dye))
+                candle(block.value(), dyes.getOrThrow(dye))
         );
 
         dyeing(output, RecipeCategory.DECORATIONS, DDBlocks.CARPETS.mergeVanilla(blockLookup), ItemTags.WOOL_CARPETS);
         DDBlocks.CARPETS.forEach((dye, block) ->
-            carpet(block.value(), DDBlocks.WOOL.getOrThrow(dye))
+                carpet(block.value(), DDBlocks.WOOL.getOrThrow(dye))
         );
 
         DDBlocks.CONCRETE_POWDER.forEach((dye, block) ->
-            concretePowder(block.value(), dyes.getOrThrow(dye))
+                concretePowder(block.value(), dyes.getOrThrow(dye))
         );
 
         DDBlocks.GLAZED_TERRACOTTA.forEach((dye, block) ->
-            smeltingResultFromBase(block.value(), DDBlocks.TERRACOTTA.getOrThrow(dye))
+                smeltingResultFromBase(block.value(), DDBlocks.TERRACOTTA.getOrThrow(dye))
         );
 
         DDBlocks.STAINED_GLASS.forEach((dye, block) ->
-            stainedGlassFromGlassAndDye(block.value(), dyes.getOrThrow(dye))
+                stainedGlassFromGlassAndDye(block.value(), dyes.getOrThrow(dye))
         );
 
         DDBlocks.STAINED_GLASS_PANES.forEach((dye, block) -> {
             var dyeItem = dyes.getOrThrow(dye);
             shaped(RecipeCategory.DECORATIONS, block.value(), 8)
-                .define('#', Blocks.GLASS_PANE).define('$', dyeItem)
-                .pattern("###")
-                .pattern("#$#")
-                .pattern("###")
-                .group("stained_glass_pane")
-                .unlockedBy("has_glass_pane", has(Blocks.GLASS_PANE))
-                .unlockedBy(getHasName(dyeItem), has(dyeItem))
-                .save(output, namespace + getConversionRecipeName(block.value(), Blocks.GLASS_PANE));
+                    .define('#', Blocks.GLASS_PANE).define('$', dyeItem)
+                    .pattern("###")
+                    .pattern("#$#")
+                    .pattern("###")
+                    .group("stained_glass_pane")
+                    .unlockedBy("has_glass_pane", has(Blocks.GLASS_PANE))
+                    .unlockedBy(getHasName(dyeItem), has(dyeItem))
+                    .save(output, namespace + getConversionRecipeName(block.value(), Blocks.GLASS_PANE));
             stainedGlassPaneFromStainedGlass(block.value(), DDBlocks.STAINED_GLASS.getOrThrow(dye));
         });
 
         DDBlocks.TERRACOTTA.forEach((dye, block) ->
-            coloredTerracottaFromTerracottaAndDye(block.value(), dyes.getOrThrow(dye))
+                coloredTerracottaFromTerracottaAndDye(block.value(), dyes.getOrThrow(dye))
         );
 
         DDBlocks.DYE_BASKETS.forEach((dye, block) -> {
             nineBlockStorageRecipes(
-                RecipeCategory.MISC, dyes.getOrThrow(dye), RecipeCategory.DECORATIONS, block.value(),
-                namespace + getItemName(block.value()), null, namespace + dye + "_dye_from_basket", dye + "_dye"
+                    RecipeCategory.MISC, dyes.getOrThrow(dye), RecipeCategory.DECORATIONS, block.value(),
+                    namespace + getItemName(block.value()), null, namespace + dye + "_dye_from_basket", dye + "_dye"
             );
         });
 
         dyeing(output, RecipeCategory.MISC, DDBlocks.WOOL.mergeVanilla(blockLookup), ItemTags.WOOL);
+
+        dyeingTransmute(output, RecipeCategory.TOOLS, DDItems.BUNDLES, ItemTags.BUNDLES);
 
         dyeConversion(output, DDDyes.AMBER.get(), Items.GLOW_BERRIES, 1);
         dyeConversion(output, DDDyes.AMBER.get(), Items.HONEYCOMB, 2);
@@ -222,10 +217,10 @@ public class DDRecipes extends RecipeProvider {
     private void dyeConversion(RecipeOutput output, DyeColor dye, ItemLike from, int amount) {
         var to = dyes.getOrThrow(dye);
         shapeless(RecipeCategory.MISC, to, amount)
-            .requires(from)
-            .group(dye + "_dye")
-            .unlockedBy(getHasName(from), has(from))
-            .save(output, DyeDepot.key(Registries.RECIPE, getConversionRecipeName(to, from)));
+                .requires(from)
+                .group(dye + "_dye")
+                .unlockedBy(getHasName(from), has(from))
+                .save(output, DyeDepot.key(Registries.RECIPE, getConversionRecipeName(to, from)));
     }
 
     private void dyeSmelting(RecipeOutput output, DyeColor dye, TagKey<Item> ingredient) {
@@ -238,27 +233,42 @@ public class DDRecipes extends RecipeProvider {
 
     private void dyeSmelting(RecipeOutput output, DyeColor dye, Ingredient ingredient, UnaryOperator<SimpleCookingRecipeBuilder> factory) {
         factory.apply(SimpleCookingRecipeBuilder.smelting(ingredient, RecipeCategory.MISC, CookingBookCategory.MISC, dyes.getOrThrow(dye), 0.1F, 200))
-            .group(dye + "_dye")
-            .save(output, DyeDepot.key(Registries.RECIPE, (dye + "_dye_from_smelting")));
+                .group(dye + "_dye")
+                .save(output, DyeDepot.key(Registries.RECIPE, (dye + "_dye_from_smelting")));
     }
 
     private void disable(RecipeOutput output, Identifier id) {
         shapeless(RecipeCategory.MISC, Items.DEBUG_STICK)
-            .requires(Items.DEBUG_STICK)
-            .unlockedBy("never", has(Items.DEBUG_STICK))
-            .save(withConditions(output, NeverCondition.INSTANCE), ResourceKey.create(Registries.RECIPE, id));
+                .requires(Items.DEBUG_STICK)
+                .unlockedBy("never", has(Items.DEBUG_STICK))
+                .save(withConditions(output, NeverCondition.INSTANCE), ResourceKey.create(Registries.RECIPE, id));
     }
 
     private void dyeing(RecipeOutput output, RecipeCategory category, DyedHolders<?, ? extends ItemLike> dyed) {
         dyeing(output, category, dyed, Ingredient.of(dyed.values().map(ItemLike::asItem)), builder -> builder
-            .unlockedBy("has_base", inventoryTrigger(ItemPredicate.Builder.item().of(items, dyed.values().toArray(ItemLike[]::new)).build()))
+                .unlockedBy("has_base", inventoryTrigger(ItemPredicate.Builder.item().of(items, dyed.values().toArray(ItemLike[]::new)).build()))
         );
     }
 
     private void dyeing(RecipeOutput output, RecipeCategory category, DyedHolders<?, ? extends ItemLike> dyed, TagKey<Item> from) {
         dyeing(output, category, dyed, Ingredient.of(items.getOrThrow(from)), builder -> builder
-            .unlockedBy(getHasName(from), has(from))
+                .unlockedBy(getHasName(from), has(from))
         );
+    }
+
+    private void dyeingTransmute(RecipeOutput output, RecipeCategory category, DyedHolders<?, ? extends ItemLike> dyed, TagKey<Item> from) {
+        var group = dyed.detectBaseName();
+        dyed.forEach((color, item) -> {
+            TransmuteRecipeBuilder.transmute(
+                            RecipeCategory.DECORATIONS,
+                            Ingredient.of(items.getOrThrow(from)),
+                            Ingredient.of(items.getOrThrow(color.getTag())),
+                            item.value().asItem()
+                    )
+                    .unlockedBy(getHasName(from), has(from))
+                    .group(group)
+                    .save(output);
+        });
     }
 
     private void dyeing(RecipeOutput output, RecipeCategory category, DyedHolders<?, ? extends ItemLike> dyed, Ingredient from, UnaryOperator<ShapelessRecipeBuilder> factory) {
@@ -267,11 +277,11 @@ public class DDRecipes extends RecipeProvider {
             var id = item.unwrapKey().orElseThrow().identifier();
             var dye = dyes.getOrThrow(color);
             factory.apply(shapeless(category, item.value()))
-                .requires(from)
-                .requires(dye)
-                .group(group)
-                .unlockedBy(getHasName(dye), has(dye))
-                .save(output, ResourceKey.create(Registries.RECIPE, id.withPrefix("dye_")));
+                    .requires(from)
+                    .requires(dye)
+                    .group(group)
+                    .unlockedBy(getHasName(dye), has(dye))
+                    .save(output, ResourceKey.create(Registries.RECIPE, id.withPrefix("dye_")));
         });
     }
 
@@ -304,7 +314,7 @@ public class DDRecipes extends RecipeProvider {
     private void dyeMixing(RecipeOutput output, DyeColor to, DyeColor... from) {
         var result = dyes.getOrThrow(to);
         var builder = shapeless(RecipeCategory.MISC, result, from.length)
-            .group(to + "_dye");
+                .group(to + "_dye");
 
         var unique = new HashSet<DyeColor>();
         for (var color : from) {
@@ -315,9 +325,9 @@ public class DDRecipes extends RecipeProvider {
         }
 
         var name = getItemName(result) + "_from_" + unique.stream()
-            .sorted(Comparator.comparing(DyeColor::getId))
-            .map(DyeColor::getSerializedName)
-            .collect(Collectors.joining("_and_"));
+                .sorted(Comparator.comparing(DyeColor::getId))
+                .map(DyeColor::getSerializedName)
+                .collect(Collectors.joining("_and_"));
 
         builder.save(output, DyeDepot.key(Registries.RECIPE, name));
     }

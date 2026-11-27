@@ -49,6 +49,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:ginger_bundle",
+      "required": false
+    },
+    {
       "id": "dye_depot:ginger_dye_basket",
       "required": false
     }

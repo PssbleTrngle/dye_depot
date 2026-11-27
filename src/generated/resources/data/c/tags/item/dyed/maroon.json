@@ -49,6 +49,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:maroon_bundle",
+      "required": false
+    },
+    {
       "id": "dye_depot:maroon_dye_basket",
       "required": false
     }

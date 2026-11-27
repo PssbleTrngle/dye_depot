@@ -49,6 +49,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:tan_bundle",
+      "required": false
+    },
+    {
       "id": "dye_depot:tan_dye_basket",
       "required": false
     }

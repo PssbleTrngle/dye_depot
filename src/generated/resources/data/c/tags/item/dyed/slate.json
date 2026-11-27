@@ -49,6 +49,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:slate_bundle",
+      "required": false
+    },
+    {
       "id": "dye_depot:slate_dye_basket",
       "required": false
     }

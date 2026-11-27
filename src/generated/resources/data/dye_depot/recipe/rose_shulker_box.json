@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_transmute",
   "category": "misc",
+  "group": "shulker_box",
   "input": "#minecraft:shulker_boxes",
   "material": "#c:dyes/rose",
   "result": {

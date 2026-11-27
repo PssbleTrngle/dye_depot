@@ -49,6 +49,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:aqua_bundle",
+      "required": false
+    },
+    {
       "id": "dye_depot:aqua_dye_basket",
       "required": false
     }

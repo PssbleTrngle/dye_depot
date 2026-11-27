@@ -5,9 +5,11 @@ import com.ninni.dye_depot.data.ModCompat;
 import com.ninni.dye_depot.registry.DDBlocks;
 import com.ninni.dye_depot.registry.DDItems;
 import com.ninni.dye_depot.registry.DyedHolders;
+
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 import java.util.stream.Stream;
+
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
@@ -109,6 +111,7 @@ public abstract class DDLangProvider extends LanguageProvider implements Transla
         dyed(builder, filterAndMerge(DDBlocks.TERRACOTTA, blockLookup), "Terracotta");
         dyed(builder, filterAndMerge(DDBlocks.WOOL, blockLookup), "Wool");
         dyed(builder, filter(DDBlocks.DYE_BASKETS), "Dye Basket");
+        dyed(builder, filterAndMerge(DDItems.BUNDLES, itemLookup), "Bundle");
 
         // TODO waiting for supplementaries
         //dyed(builder, supplementariesHolders(blockLookup, "present"), "Present");

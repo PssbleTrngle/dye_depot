@@ -49,6 +49,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:forest_bundle",
+      "required": false
+    },
+    {
       "id": "dye_depot:forest_dye_basket",
       "required": false
     }
