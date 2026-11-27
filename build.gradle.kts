@@ -37,7 +37,7 @@ dependencies {
     modImplementation(pack.modrinth.supplementaries)
     modImplementation(pack.modrinth.supplementaries.squared)
 
-    modImplementation(libs.multikulti.datagen)
+    "dataImplementation"(libs.multikulti.datagen)
 }
 
 upload.maven.nexus()
