@@ -1,0 +1,24 @@
+{
+  "type": "dye_depot:inject_table",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:shearing/sheep"
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "components": {
+          "minecraft:sheep/color": "teal"
+        },
+        "type_specific": {
+          "type": "minecraft:sheep",
+          "sheared": false
+        }
+      }
+    }
+  ],
+  "loot_table_id": "dye_depot:shearing/sheep/teal",
+  "priority": 0
+}

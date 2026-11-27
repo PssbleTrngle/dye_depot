@@ -1,11 +1,14 @@
 package com.ninni.dye_depot.data.server;
 
 import com.ninni.dye_depot.DyeDepot;
+import com.ninni.dye_depot.loot.InjectTableModifier;
 import com.ninni.dye_depot.loot.ReplaceDropsModifier;
 import com.ninni.dye_depot.registry.DDBlocks;
 import com.ninni.dye_depot.registry.DDDyes;
 import com.ninni.dye_depot.registry.DDItems;
+
 import java.util.concurrent.CompletableFuture;
+
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.util.random.WeightedList;
@@ -37,8 +40,12 @@ public class DDLootModifiersProvider extends GlobalLootModifierProvider {
         add("modify_ocean_ruin_cold", ReplaceDropsModifier.forTable(
                 BuiltInLootTables.OCEAN_RUIN_COLD_ARCHAEOLOGY,
                 0.1F,
-            WeightedList.of(new ItemStackTemplate(DDItems.DYES.getOrThrow(DDDyes.VERDANT.get())))
+                WeightedList.of(new ItemStackTemplate(DDItems.DYES.getOrThrow(DDDyes.VERDANT.get())))
         ));
+
+        for (var dye : DDDyes.values()) {
+            add("modify_sheep_shearing/" + dye.getSerializedName(), InjectTableModifier.forSheep(dye.get()));
+        }
     }
 
     private WeightedList<ItemStackTemplate> createWoolList() {
