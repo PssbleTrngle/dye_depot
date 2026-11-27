@@ -8,6 +8,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.BundleContents;
+import net.minecraft.world.item.equipment.Equippable;
 import net.minecraft.world.level.block.entity.BannerPatternLayers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -38,6 +39,10 @@ public class DDItems {
 
     public static final DyedHolders<Item, Item> BUNDLES = DyedHolders.createModded(dye ->
             register(dye + "_bundle", props -> new BundleItem(props.stacksTo(1).component(DataComponents.BUNDLE_CONTENTS, BundleContents.EMPTY)))
+    );
+
+    public static final DyedHolders<Item, Item> HARNESSES = DyedHolders.createModded(dye ->
+            register(dye + "_harness", props -> new Item(props.stacksTo(1).component(DataComponents.EQUIPPABLE, Equippable.harness(dye))))
     );
 
     @SuppressWarnings("unchecked")

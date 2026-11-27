@@ -53,6 +53,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:slate_harness",
+      "required": false
+    },
+    {
       "id": "dye_depot:slate_dye_basket",
       "required": false
     }

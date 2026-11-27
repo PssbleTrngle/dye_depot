@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "harness",
+  "ingredients": [
+    "#minecraft:harnesses",
+    "dye_depot:forest_dye"
+  ],
+  "result": {
+    "id": "dye_depot:forest_harness"
+  }
+}

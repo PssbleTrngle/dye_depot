@@ -53,6 +53,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:ginger_harness",
+      "required": false
+    },
+    {
       "id": "dye_depot:ginger_dye_basket",
       "required": false
     }

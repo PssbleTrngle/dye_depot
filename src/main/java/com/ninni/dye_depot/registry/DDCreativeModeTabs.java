@@ -117,6 +117,7 @@ public class DDCreativeModeTabs {
 
         if (tab == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             addDyed(entries, BUNDLES, "bundle");
+            addDyed(entries, HARNESSES, "harness");
         }
     }
 

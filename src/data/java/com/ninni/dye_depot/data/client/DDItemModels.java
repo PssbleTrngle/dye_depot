@@ -19,6 +19,7 @@ public class DDItemModels {
     protected void registerModels(HolderLookup.Provider lookup) {
         DDItems.DYES.holders().forEach(this::basicItem);
         DDItems.BUNDLES.holders().forEach(this::bundle);
+        DDItems.HARNESSES.holders().forEach(this::basicItem);
     }
 
     private void bundle(Holder<Item> item) {

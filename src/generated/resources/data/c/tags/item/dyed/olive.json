@@ -53,6 +53,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:olive_harness",
+      "required": false
+    },
+    {
       "id": "dye_depot:olive_dye_basket",
       "required": false
     }

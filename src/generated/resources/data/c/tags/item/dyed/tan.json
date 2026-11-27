@@ -53,6 +53,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:tan_harness",
+      "required": false
+    },
+    {
       "id": "dye_depot:tan_dye_basket",
       "required": false
     }

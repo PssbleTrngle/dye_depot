@@ -1,0 +1,68 @@
+{
+  "values": [
+    {
+      "id": "dye_depot:maroon_harness",
+      "required": false
+    },
+    {
+      "id": "dye_depot:rose_harness",
+      "required": false
+    },
+    {
+      "id": "dye_depot:coral_harness",
+      "required": false
+    },
+    {
+      "id": "dye_depot:indigo_harness",
+      "required": false
+    },
+    {
+      "id": "dye_depot:navy_harness",
+      "required": false
+    },
+    {
+      "id": "dye_depot:slate_harness",
+      "required": false
+    },
+    {
+      "id": "dye_depot:olive_harness",
+      "required": false
+    },
+    {
+      "id": "dye_depot:amber_harness",
+      "required": false
+    },
+    {
+      "id": "dye_depot:beige_harness",
+      "required": false
+    },
+    {
+      "id": "dye_depot:teal_harness",
+      "required": false
+    },
+    {
+      "id": "dye_depot:mint_harness",
+      "required": false
+    },
+    {
+      "id": "dye_depot:aqua_harness",
+      "required": false
+    },
+    {
+      "id": "dye_depot:verdant_harness",
+      "required": false
+    },
+    {
+      "id": "dye_depot:forest_harness",
+      "required": false
+    },
+    {
+      "id": "dye_depot:ginger_harness",
+      "required": false
+    },
+    {
+      "id": "dye_depot:tan_harness",
+      "required": false
+    }
+  ]
+}

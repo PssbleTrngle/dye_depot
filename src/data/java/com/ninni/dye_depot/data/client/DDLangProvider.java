@@ -112,6 +112,7 @@ public abstract class DDLangProvider extends LanguageProvider implements Transla
         dyed(builder, filterAndMerge(DDBlocks.WOOL, blockLookup), "Wool");
         dyed(builder, filter(DDBlocks.DYE_BASKETS), "Dye Basket");
         dyed(builder, filterAndMerge(DDItems.BUNDLES, itemLookup), "Bundle");
+        dyed(builder, filterAndMerge(DDItems.HARNESSES, itemLookup), "Harness");
 
         // TODO waiting for supplementaries
         //dyed(builder, supplementariesHolders(blockLookup, "present"), "Present");

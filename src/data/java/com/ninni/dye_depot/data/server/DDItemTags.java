@@ -54,6 +54,7 @@ public class DDItemTags extends ItemTagsProvider {
         tagDyed(DDBlocks.STAINED_GLASS_PANES, loaderTag("glass_panes"));
 
         tagDyed(DDItems.BUNDLES, ItemTags.BUNDLES);
+        tagDyed(DDItems.HARNESSES, ItemTags.HARNESSES);
 
         // TODO waiting for supplementaries
         tagDyed(DDBlocks.DYE_BASKETS /*, ModTags.SOAP_BLACKLIST_ITEM */);

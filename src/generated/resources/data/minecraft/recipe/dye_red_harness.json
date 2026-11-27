@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "harness",
+  "ingredients": [
+    "#minecraft:harnesses",
+    "minecraft:red_dye"
+  ],
+  "result": {
+    "id": "minecraft:red_harness"
+  }
+}

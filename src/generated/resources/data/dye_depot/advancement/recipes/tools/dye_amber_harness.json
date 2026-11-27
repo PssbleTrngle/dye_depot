@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_amber_dye": {
+      "conditions": {
+        "items": [
+          {
+            "items": "dye_depot:amber_dye"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_harnesses": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:harnesses"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dye_depot:dye_amber_harness"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_harnesses",
+      "has_amber_dye"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dye_depot:dye_amber_harness"
+    ]
+  }
+}

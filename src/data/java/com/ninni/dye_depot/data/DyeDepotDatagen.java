@@ -31,6 +31,7 @@ public class DyeDepotDatagen {
         generator.addProvider(true, new DDModels(output, lookup));
         generator.addProvider(true, new DDLang(output, lookup));
         generator.addProvider(true, new DDTrades(output, lookup));
+        generator.addProvider(true, new DDEquipmentAssets(output));
 
         var supplementariesPack = generator.getBuiltinDatapack(true, "dye_override");
         var supplementariesOutput = new PackOutput(output.getOutputFolder().resolve("resourcepacks/dye_override"));

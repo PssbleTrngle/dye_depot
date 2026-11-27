@@ -110,6 +110,10 @@ public class DDRecipes extends RecipeProvider {
         dyeing(output, RecipeCategory.MISC, DDBlocks.WOOL.mergeVanilla(blockLookup), ItemTags.WOOL);
 
         dyeingTransmute(output, RecipeCategory.TOOLS, DDItems.BUNDLES, ItemTags.BUNDLES);
+        dyeing(output, RecipeCategory.TOOLS, DDItems.HARNESSES.mergeVanilla(itemLookup), ItemTags.HARNESSES);
+        DDItems.HARNESSES.forEach((dye, item) ->
+                harness(item.value(), DDBlocks.WOOL.getOrThrow(dye))
+        );
 
         dyeConversion(output, DDDyes.AMBER.get(), Items.GLOW_BERRIES, 1);
         dyeConversion(output, DDDyes.AMBER.get(), Items.HONEYCOMB, 2);

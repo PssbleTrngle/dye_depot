@@ -53,6 +53,10 @@
       "required": false
     },
     {
+      "id": "dye_depot:navy_harness",
+      "required": false
+    },
+    {
       "id": "dye_depot:navy_dye_basket",
       "required": false
     }
