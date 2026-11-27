@@ -18,6 +18,7 @@ repositories {
         url = uri("https://maven.blamejared.com/")
         content {
             includeGroup("mezz.jei")
+            includeGroupAndSubgroups("net.mezzdev")
         }
     }
 
