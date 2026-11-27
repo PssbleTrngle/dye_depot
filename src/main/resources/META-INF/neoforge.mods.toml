@@ -16,7 +16,7 @@ configBackground = "${mod_id}:textures/block/teal_glazed_terracotta.png"
 
 [[dependencies.${mod_id}]]
 modId="neoforge"
-versionRange="[21.1.209,)"
+versionRange="[26,)"
 ordering="AFTER"
 side="BOTH"
 
