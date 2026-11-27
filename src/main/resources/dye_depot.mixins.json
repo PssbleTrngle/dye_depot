@@ -14,10 +14,8 @@
     "client.NearestBedSensorMixin"
   ],
   "client": [
-    "client.BedRendererMixin",
     "client.BlockEntityWithoutLevelRendererMixin",
     "client.LlamaDecorLayerMixin",
-    "client.ShulkerBoxRendererMixin",
     "client.SheetsMixin"
   ],
   "injectors": {
