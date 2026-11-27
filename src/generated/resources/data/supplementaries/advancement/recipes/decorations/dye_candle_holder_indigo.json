@@ -11,11 +11,11 @@
   ],
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_candle_holder_white": {
+    "has_candle_holder": {
       "conditions": {
         "items": [
           {
-            "items": "supplementaries:candle_holder_white"
+            "items": "supplementaries:candle_holder"
           }
         ]
       },
@@ -41,7 +41,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_candle_holder_white",
+      "has_candle_holder",
       "has_indigo_dye"
     ]
   ],

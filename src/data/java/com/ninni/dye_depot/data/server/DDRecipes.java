@@ -195,7 +195,7 @@ public class DDRecipes extends RecipeProvider {
                         .save(output);
             });
 
-            dyeing(output, RecipeCategory.DECORATIONS, holders, ModRegistry.CANDLE_HOLDERS.get(DyeColor.WHITE).get());
+            dyeing(output, RecipeCategory.DECORATIONS, holders, ModRegistry.CANDLE_HOLDERS.get(null).get());
         });
 
         withSupplementariesFlag(this, ModCompat.SUPPLEMENTARIES_SQUARED, "candle_holder", () -> {
@@ -212,7 +212,7 @@ public class DDRecipes extends RecipeProvider {
                         .save(output);
             });
 
-            dyeing(output, RecipeCategory.DECORATIONS, holders, SuppSquared.GOLDEN_CANDLE_HOLDERS.get(DyeColor.WHITE).get());
+            dyeing(output, RecipeCategory.DECORATIONS, holders, SuppSquared.GOLDEN_CANDLE_HOLDERS.get(null).get());
         });
 
         ModCompat.supplementariesHolders(itemLookup, "flag").forEach((dye, block) -> {

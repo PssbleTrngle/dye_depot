@@ -14,7 +14,7 @@
   "group": "gold_candle_holder",
   "ingredients": [
     {
-      "item": "suppsquared:gold_candle_holder_white"
+      "item": "suppsquared:gold_candle_holder"
     },
     {
       "item": "dye_depot:navy_dye"

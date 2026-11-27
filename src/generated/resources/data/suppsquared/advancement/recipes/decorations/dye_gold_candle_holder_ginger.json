@@ -21,11 +21,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_gold_candle_holder_white": {
+    "has_gold_candle_holder": {
       "conditions": {
         "items": [
           {
-            "items": "suppsquared:gold_candle_holder_white"
+            "items": "suppsquared:gold_candle_holder"
           }
         ]
       },
@@ -41,7 +41,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_gold_candle_holder_white",
+      "has_gold_candle_holder",
       "has_ginger_dye"
     ]
   ],
